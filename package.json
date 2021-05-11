@@ -25,7 +25,9 @@
     "test": "cross-env NODE_ENV=test && jest --coverage",
     "test:ci": "yarn run build:h5 && yarn run test",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "clean": "rimraf .temp dist lib coverage"
+    "clean": "rimraf .temp dist lib coverage",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "keywords": [
     "taro"
@@ -33,17 +35,20 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.14.0",
     "@rollup/plugin-commonjs": "^13.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^8.0.1",
-    "@tarojs/components": "^3.0.8",
-    "@tarojs/react": "^3.0.8",
-    "@tarojs/taro": "^3.0.8",
+    "@storybook/addon-actions": "6.0.28",
+    "@storybook/addon-essentials": "6.0.28",
+    "@storybook/addon-links": "6.0.28",
+    "@storybook/react": "6.0.28",
     "@types/node": "^14.0.13",
     "@types/react": "^16.9.36",
     "@types/react-dom": "^16.9.8",
     "@typescript-eslint/eslint-plugin": "^2.x",
     "@typescript-eslint/parser": "^2.x",
+    "babel-loader": "^8.2.2",
     "cross-env": "^7.0.2",
     "eslint": "^7.2.0",
     "eslint-config-taro": "^3.0.8",
@@ -63,9 +68,11 @@
     "typescript": "^3.9.5"
   },
   "peerDependencies": {
-    "@tarojs/components": "^3.0.8",
-    "@tarojs/react": "^3.0.8",
     "react": ">=16.13.0",
     "react-dom": ">=16.13.0"
+  },
+  "dependencies": {
+    "@tarojs/components": "^3.0.8",
+    "@tarojs/react": "^3.0.8"
   }
 }
