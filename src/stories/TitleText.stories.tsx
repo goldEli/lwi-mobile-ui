@@ -15,16 +15,7 @@ export default {
 
 const Template: Story<ITitleTextProps> = (args) => <TitleText {...args} />;
 
-export const Basic = Template.bind({}) as {args: ITitleTextProps}
+export const Basic = Template.bind({})
 
-Basic.args = {
-  text: "我是标题文本",
-  color: "red",
-  align: "center",
-  fontSize: "12",
-  fontWeight: "bold",
-  lineHeight: 30,
-  paddingX: 20,
-  height: 30
-} 
+Basic.args = TitleText.defaultProps 
 
