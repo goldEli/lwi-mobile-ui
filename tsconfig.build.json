@@ -3,7 +3,7 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "jsx": "react",
-    "jsxFactory": "React.createElement",
+    // "jsxFactory": "React.createElement",
     "moduleResolution": "node",
     "noImplicitAny": false,
     "noUnusedLocals": false,
