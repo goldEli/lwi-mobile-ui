@@ -1,1 +1,3 @@
-# Taro UI 库 React 版本范例
+# 跨框架组件库
+
+兼容 tarojs 和 reactjs
