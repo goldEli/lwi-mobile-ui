@@ -4,5 +4,5 @@ export default create({
   base: 'light',
   brandTitle: 'lwj-mobile-ui',
 //   brandUrl: 'https://example.com',
-//   brandImage: 'http://frontend-doc.liweijia.com/icon.png',
+  brandImage: 'https://static.liweijia.com/liweijia/pc/mainsite/images/liweijialogo.png',
 });

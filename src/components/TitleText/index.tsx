@@ -27,7 +27,7 @@ const TitleText: React.FC<ITitleTextProps> = (props) => {
         fontSize: `${props.fontSize}px`,
         fontWeight: props.fontWeight,
         padding: `0 ${props.paddingX}px`,
-        height: `${props.height}px`,
+        height: props.height === undefined ? "100%" : `${props.height}px`,
       }}
     >
       {props.text}
@@ -43,7 +43,6 @@ TitleText.defaultProps = {
   fontWeight: "bold",
   lineHeight: 30,
   paddingX: 20,
-  height: 30,
 };
 
 export default TitleText;

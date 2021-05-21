@@ -1,7 +1,9 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
-import BlankComponents, {IBlankComponentsProps} from "../components/BlankComponents";
+import BlankComponents, {
+  IBlankComponentsProps,
+} from "../components/BlankComponents";
 
 export default {
   title: "组件库/空白组件",
@@ -20,9 +22,11 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IBlankComponentsProps> = (args) => <BlankComponents {...args} />;
+const Template: Story<IBlankComponentsProps> = (args) => (
+  <BlankComponents {...args} />
+);
 
 export const Basic = Template.bind({});
 
-Basic.args = BlankComponents.defaultProps;
-Basic.storyName = "介绍"
+Basic.args = {...BlankComponents.defaultProps, height: 30};
+Basic.storyName = "介绍";
