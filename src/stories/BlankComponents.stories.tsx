@@ -4,13 +4,13 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 import BlankComponents, {IBlankComponentsProps} from "../components/BlankComponents";
 
 export default {
-  title: "Example/BlankComponents",
+  title: "组件库/空白组件",
   component: BlankComponents,
   parameters: {
     docs: {
       description: {
         component: `
-空白组件，只支持纵向，可自定义背景色
+只支持纵向，可自定义背景色
         `,
       },
     },
@@ -25,3 +25,4 @@ const Template: Story<IBlankComponentsProps> = (args) => <BlankComponents {...ar
 export const Basic = Template.bind({});
 
 Basic.args = BlankComponents.defaultProps;
+Basic.storyName = "介绍"

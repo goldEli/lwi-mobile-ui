@@ -6,13 +6,13 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 import TitleText, { ITitleTextProps } from "../components/TitleText";
 
 export default {
-  title: "Example/TitleText",
+  title: "组件库/标题文本",
   component: TitleText,
   parameters: {
     docs: {
       description: {
         component: `
-标题文本，可自定义字体颜色、大小等
+可自定义字体颜色、大小等
         `,
       },
     },
@@ -27,3 +27,4 @@ const Template: Story<ITitleTextProps> = (args) => <TitleText {...args} />;
 export const Basic = Template.bind({});
 
 Basic.args = TitleText.defaultProps;
+Basic.storyName = "介绍"

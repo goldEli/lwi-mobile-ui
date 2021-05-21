@@ -26,7 +26,7 @@
     "test:ci": "yarn run build:h5 && yarn run test",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "clean": "rimraf .temp dist lib coverage",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook"
   },
   "keywords": [
