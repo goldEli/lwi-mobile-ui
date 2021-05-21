@@ -4,7 +4,7 @@ import { View } from "@tarojs/components/dist-h5/react";
 
 export interface ITitleTextProps {
   text?: string;
-  align?: "left" | "center" | "right";
+  align?: "left" | "center" | "end";
   fontSize?: "16" | "14" | "12";
   fontWeight?: "bold" | "normal";
   color?: string;
