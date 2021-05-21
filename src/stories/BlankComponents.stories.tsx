@@ -18,7 +18,7 @@ export default {
     },
   },
   argTypes: {
-    backgroundColor: { control: "color" },
+    bgColor: { control: "color" },
   },
 } as Meta;
 

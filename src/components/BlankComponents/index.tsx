@@ -3,7 +3,7 @@ import React from "react";
 import { View } from "@tarojs/components/dist-h5/react";
 
 export interface IBlankComponentsProps {
-  backgroundColor?: string;
+  bgColor: string;
   height?: number;
 }
 
@@ -12,7 +12,7 @@ const BlankComponents: React.FC<IBlankComponentsProps> = (props) => {
     <View
       style={{
         width: "100%",
-        backgroundColor: props.backgroundColor,
+        backgroundColor: props.bgColor,
         height: props.height === undefined ? "100%" : `${props.height}px`,
       }}
     >
@@ -21,7 +21,7 @@ const BlankComponents: React.FC<IBlankComponentsProps> = (props) => {
 };
 
 BlankComponents.defaultProps = {
-  backgroundColor: "black",
+  bgColor: "black",
 };
 
 export default BlankComponents;
