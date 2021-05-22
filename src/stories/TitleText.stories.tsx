@@ -3,7 +3,8 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 // import { actions } from "@storybook/addon-actions";
 
-import TitleText, { ITitleTextProps } from "../components/TitleText";
+import { ITitleTextProps } from "../components/TitleText";
+import { TitleText } from "../../h5/index.esm.js";
 
 export default {
   title: "组件库/标题文本",
@@ -27,4 +28,4 @@ const Template: Story<ITitleTextProps> = (args) => <TitleText {...args} />;
 export const Basic = Template.bind({});
 
 Basic.args = TitleText.defaultProps;
-Basic.storyName = "介绍"
+Basic.storyName = "介绍";

@@ -18,6 +18,7 @@
     "build": "yarn run build:rollup && yarn run build:lib",
     "build:lib": "tsc --project ./tsconfig.build.json --declaration --declarationDir types",
     "build:rollup": "rollup --config ./rollup.config.js",
+    "build:rollup-h5": "rollup --config ./rollup-h5.config.js",
     "prepublishOnly": "yarn run clean && yarn run build",
     "lint": "eslint ./src --fix",
     "lint:style": "stylelint \"src/**/*.scss\" --syntax scss",
@@ -36,6 +37,7 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.14.0",
+    "@rollup/plugin-alias": "^3.1.2",
     "@rollup/plugin-commonjs": "^13.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^8.0.1",
@@ -58,7 +60,11 @@
     "jest": "26",
     "rimraf": "3.0.2",
     "rollup": "^2.16.1",
+    "rollup-plugin-alias": "^2.2.0",
     "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-scss": "^2.6.1",
     "rollup-plugin-typescript2": "^0.27.1",
     "rollup-plugin-visualizer": "^4.0.4",
     "stylelint": "13.6.0",
@@ -73,6 +79,7 @@
   },
   "dependencies": {
     "@tarojs/components": "^3.0.8",
-    "@tarojs/react": "^3.0.8"
+    "@tarojs/react": "^3.0.8",
+    "taro-ui": "3.0.0-alpha.10"
   }
 }

@@ -1,6 +1,6 @@
 import React from "react";
-// import { View } from "@tarojs/components";
-import { View } from "@tarojs/components/dist-h5/react";
+import { View } from "@tarojs/components";
+// import { View } from "@tarojs/components/dist-h5/react";
 
 export interface IBlankComponentsProps {
   bgColor: string;

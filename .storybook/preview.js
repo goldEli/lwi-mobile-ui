@@ -1,5 +1,6 @@
 import { applyPolyfills, defineCustomElements } from '@tarojs/components/loader'
 import '@tarojs/components/dist/taro-components/taro-components.css'
+import '../h5/index.esm.css'
 
 applyPolyfills().then(() => {
   defineCustomElements(window)

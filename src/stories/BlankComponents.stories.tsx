@@ -1,9 +1,8 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
-import BlankComponents, {
-  IBlankComponentsProps,
-} from "../components/BlankComponents";
+import { IBlankComponentsProps } from "../components/BlankComponents";
+import { BlankComponents } from "../../h5/index.esm.js";
 
 export default {
   title: "组件库/空白组件",
