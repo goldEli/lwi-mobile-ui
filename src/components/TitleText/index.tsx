@@ -1,8 +1,8 @@
 import React from "react";
 import { View } from "@tarojs/components";
-import { AtButton } from "taro-ui";
+// import { AtButton } from "taro-ui";
 // import { View } from "@tarojs/components/dist-h5/react";
-import "taro-ui/dist/style/components/button.scss";
+// import "taro-ui/dist/style/components/button.scss";
 
 export interface ITitleTextProps {
   text?: string;
@@ -33,7 +33,7 @@ const TitleText: React.FC<ITitleTextProps> = (props) => {
       }}
     >
       {props.text}
-      <AtButton type="primary">123</AtButton>
+      {/* <AtButton type="primary">123</AtButton> */}
     </View>
   );
 };
