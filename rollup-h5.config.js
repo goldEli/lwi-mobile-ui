@@ -5,7 +5,6 @@ import RollupCommonjs from "@rollup/plugin-commonjs";
 import RollupTypescript from "rollup-plugin-typescript2";
 import RollupCopy from "rollup-plugin-copy";
 import alias from "@rollup/plugin-alias";
-import nodePolyfills from "rollup-plugin-node-polyfills";
 import scss from 'rollup-plugin-scss'
 
 

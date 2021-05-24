@@ -4,6 +4,7 @@ import RollupNodeResolve from '@rollup/plugin-node-resolve'
 import RollupCommonjs from '@rollup/plugin-commonjs'
 import RollupTypescript from 'rollup-plugin-typescript2'
 import RollupCopy from 'rollup-plugin-copy'
+import scss from 'rollup-plugin-scss'
 
 import Package from './package.json'
 
@@ -45,6 +46,7 @@ export default {
   ],
   external: externalPackages,
   plugins: [
+    scss(),
     RollupNodeResolve({
       customResolveOptions: {
         moduleDirectory: 'node_modules'

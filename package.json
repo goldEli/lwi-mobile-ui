@@ -15,6 +15,7 @@
   "scripts": {
     "dev": "yarn run dev:lib",
     "dev:lib": "tsc --project ./tsconfig.build.json --watch --incremental",
+    "dev:rollup-h5": "rollup --config ./rollup-h5.config.js -w",
     "build": "yarn run build:rollup && yarn run build:lib",
     "build:lib": "tsc --project ./tsconfig.build.json --declaration --declarationDir types",
     "build:rollup": "rollup --config ./rollup.config.js",
@@ -28,7 +29,7 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "clean": "rimraf .temp dist lib coverage",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook"
+    "build-storybook": "yarn build:rollup-h5 && build-storybook"
   },
   "keywords": [
     "taro"
