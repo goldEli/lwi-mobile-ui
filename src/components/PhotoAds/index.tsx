@@ -56,7 +56,7 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
                     height: "auto",
                   }}
                   // mode="aspectFit"
-                  src={item.imgUrl[0].url}
+                  src={item?.imgUrl[0]?.url}
                 />
               </SwiperItem>
             );
@@ -73,7 +73,7 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
                   height: "auto",
                 }}
                 key={item.id}
-                src={item.imgUrl[0].url}
+                src={item?.imgUrl[0]?.url}
               />
             );
           })}
