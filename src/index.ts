@@ -5,3 +5,4 @@ export { default as StoreInfo } from "./components/StoreInfo";
 export { default as GraphicNavigation } from "./components/GraphicNavigation";
 export { default as CategoryNavigation } from "./components/CategoryNavigation";
 export { default as GoldCoinPurchase } from "./components/GoldCoinPurchase";
+export { default as ProductSearch } from "./components/ProductSearch";
