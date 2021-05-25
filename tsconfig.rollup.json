@@ -17,7 +17,12 @@
     "module": "es6",
     "downlevelIteration": true,
     "baseUrl": ".",
-    "types": ["node"]
+    "types": ["node"],
+    "typeRoots": [
+      "node_modules/@types",
+      "types",
+      "src/declaration.d.ts"
+    ]
   },
   "compileOnSave": false,
   "exclude": [

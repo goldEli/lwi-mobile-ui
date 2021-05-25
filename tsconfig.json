@@ -18,7 +18,8 @@
     "baseUrl": "./",
     "typeRoots": [
       "node_modules/@types",
-      "types"
+      "types",
+      "src/declaration.d.ts"
     ]
   },
   "compileOnSave": false,
