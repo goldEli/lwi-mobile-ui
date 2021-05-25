@@ -1,0 +1,27 @@
+.lwj-graphic-naviation {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  .list {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    .list-item {
+      width: 65px;
+      height: 65px;
+      overflow: hidden;
+      flex-shrink: 0;
+      .list-item-img {
+        padding: 0 12px;
+        height: 40px;
+      }
+      .list-item-title {
+        height: 25px;
+        font-size: 13px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

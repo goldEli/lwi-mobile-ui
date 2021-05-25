@@ -1,25 +1,7 @@
 import React from "react";
 import { Swiper, SwiperItem, View, Image } from "@tarojs/components";
+import { IImgListItem } from "../type";
 
-interface IImgUrlItem {
-  uid: string;
-  name: string;
-  status: string;
-  url: string;
-}
-
-interface IImgListItem {
-  id: string;
-  title: string;
-  desc: string;
-  link: string;
-  type?: number;
-  clickHref?: string;
-  openType?: string;
-  wxapplink?: string;
-
-  imgUrl: IImgUrlItem[];
-}
 
 export interface IPhotoAdsProps {
   template?: "carousel" | "oneInARow";
