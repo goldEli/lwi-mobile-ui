@@ -26,11 +26,13 @@ export interface IPhotoAdsProps {
   borderRadius?: number;
   paddingX?: number;
   imgList?: IImgListItem[];
+  autoplay?: boolean;
 }
 
 const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
   return (
     <View
+      className="lwj-photo-ads"
       style={{
         width: "100%",
         padding: `0 ${props.paddingX}px`,
@@ -42,17 +44,20 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
           indicatorActiveColor="#333"
           circular
           indicatorDots
-          autoplay
+          autoplay={props.autoplay}
         >
           {props?.imgList?.map((item) => {
             return (
-              <SwiperItem
-                key={item.id}
-                style={{
-                  borderRadius: `${props.borderRadius}px`,
-                }}
-              >
-                <Image mode="aspectFit" src={item.imgUrl[0].url} />
+              <SwiperItem key={item.id}>
+                <Image
+                  style={{
+                    borderRadius: `${props.borderRadius}px`,
+                    width: "100%",
+                    height: "auto",
+                  }}
+                  // mode="aspectFit"
+                  src={item.imgUrl[0].url}
+                />
               </SwiperItem>
             );
           })}
@@ -62,7 +67,11 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
           {props?.imgList?.map((item) => {
             return (
               <Image
-                style={{ width: "100%", height: "auto" }}
+                style={{
+                  borderRadius: `${props.borderRadius}px`,
+                  width: "100%",
+                  height: "auto",
+                }}
                 key={item.id}
                 src={item.imgUrl[0].url}
               />
@@ -108,6 +117,7 @@ PhotoAds.defaultProps = {
   ],
   borderRadius: 3,
   paddingX: 30,
+  autoplay: false,
 };
 
 export default PhotoAds;
