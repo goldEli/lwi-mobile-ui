@@ -1,7 +1,6 @@
 import React from "react";
 import { Swiper, SwiperItem, View, Image } from "@tarojs/components";
 
-
 interface IImgUrlItem {
   uid: string;
   name: string;
@@ -62,7 +61,11 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
         <View style={{ display: "flex", flexDirection: "column" }}>
           {props?.imgList?.map((item) => {
             return (
-              <Image key={item.id} src={item.imgUrl[0].url} />
+              <Image
+                style={{ width: "100%", height: "auto" }}
+                key={item.id}
+                src={item.imgUrl[0].url}
+              />
             );
           })}
         </View>
