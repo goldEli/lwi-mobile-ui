@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Image } from "@tarojs/components";
-import img from "../../assets/hihouse/StoreInfo.png";
+import img from "../../assets/hihouse/GoldCoinPurchase.png";
 
-export interface IStoreInfoProps {}
+export interface IGoldCoinPurchaseProps {}
 
-const StoreInfo: React.FC<IStoreInfoProps> = (props) => {
+const GoldCoinPurchase: React.FC<IGoldCoinPurchaseProps> = (props) => {
   return (
     <View
       style={{
@@ -22,7 +22,7 @@ const StoreInfo: React.FC<IStoreInfoProps> = (props) => {
   );
 };
 
-StoreInfo.defaultProps = {
+GoldCoinPurchase.defaultProps = {
 };
 
-export default StoreInfo;
+export default GoldCoinPurchase;
