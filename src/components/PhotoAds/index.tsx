@@ -1,15 +1,11 @@
 import React from "react";
-// import { AtButton } from "taro-ui";
-// import { View } from "@tarojs/components/dist-h5/react";
-// import "taro-ui/dist/style/components/button.scss";
-import Taro, { Component } from "@tarojs/taro";
-// 引入 Swiper, SwiperItem 组件
 import { Swiper, SwiperItem, View, Image } from "@tarojs/components";
+
 
 interface IImgUrlItem {
   uid: string;
   name: string;
-  status: "done";
+  status: string;
   url: string;
 }
 
@@ -18,6 +14,11 @@ interface IImgListItem {
   title: string;
   desc: string;
   link: string;
+  type?: number;
+  clickHref?: string;
+  openType?: string;
+  wxapplink?: string;
+
   imgUrl: IImgUrlItem[];
 }
 
@@ -33,30 +34,39 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
     <View
       style={{
         width: "100%",
-        margin: `0 ${props.paddingX}px`,
+        padding: `0 ${props.paddingX}px`,
       }}
     >
-      <Swiper
-        indicatorColor="#999"
-        indicatorActiveColor="#333"
-        circular
-        indicatorDots
-        autoplay
-      >
-        {props?.imgList?.map((item) => {
-          return (
-            <SwiperItem>
-              <Image
+      {props.template === "carousel" ? (
+        <Swiper
+          indicatorColor="#999"
+          indicatorActiveColor="#333"
+          circular
+          indicatorDots
+          autoplay
+        >
+          {props?.imgList?.map((item) => {
+            return (
+              <SwiperItem
+                key={item.id}
                 style={{
                   borderRadius: `${props.borderRadius}px`,
                 }}
-                mode="aspectFit"
-                src={item.imgUrl[0].url}
-              />
-            </SwiperItem>
-          );
-        })}
-      </Swiper>
+              >
+                <Image mode="aspectFit" src={item.imgUrl[0].url} />
+              </SwiperItem>
+            );
+          })}
+        </Swiper>
+      ) : (
+        <View style={{ display: "flex", flexDirection: "column" }}>
+          {props?.imgList?.map((item) => {
+            return (
+              <Image key={item.id} src={item.imgUrl[0].url} />
+            );
+          })}
+        </View>
+      )}
     </View>
   );
 };
