@@ -5,11 +5,6 @@ import { IPhotoAdsProps } from "../components/PhotoAds";
 import { PhotoAds } from "../../h5/index.esm.js";
 import { TMeta } from "./type";
 
-type BetterObject = {
-  keys<T extends {}>(object: T): (keyof T)[];
-};
-
-type DX = keyof IPhotoAdsProps;
 const ret: TMeta<IPhotoAdsProps> = {
   title: "组件库/图片广告",
   component: PhotoAds,
