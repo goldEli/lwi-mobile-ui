@@ -17,18 +17,11 @@ const ret: TMeta<IProductSearchProps> = {
     },
   },
   argTypes: {
-    // template: {
-    //   description: "展示模式，**carousel** : 轮播，**oneInARow** : 纵向排列，",
-    // },
     borderStyle: {
-      description: "搜索框样式类型",
+      description: `搜索框样式类型: **normal** , **none** `,
+      // options: ["normal", "none"],
+      // contorl: "select", // Automatically inferred when 'options' is defined
     },
-    // borderRadius: {
-    //   description: "圆角",
-    // },
-    // paddingX: {
-    //   description: "页边距",
-    // },
   },
 };
 export default ret;

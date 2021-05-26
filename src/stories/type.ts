@@ -3,7 +3,8 @@ import { Meta } from "@storybook/react/types-6-0";
 export type TArgTypes<T> = {
   [key in keyof T]?: {
     description?: string;
-    contorl?: "color";
+    contorl?: "color" | "select" | { type: "select" };
+    options?: string[];
   };
 };
 
