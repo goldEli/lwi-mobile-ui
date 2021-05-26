@@ -18,6 +18,7 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
       style={{
         width: "100%",
         padding: `0 ${props.paddingX}px`,
+        boxSizing: "border-box"
       }}
     >
       {props.template === "carousel" ? (
