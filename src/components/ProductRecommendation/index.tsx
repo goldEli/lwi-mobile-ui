@@ -5,10 +5,10 @@ import "../../styles/components/ProductRecommendation.scss";
 import classnames from "classnames";
 
 export interface IProductRecommendationProps {
-  enableProductDesc: boolean;
-  enableProductPrice: boolean;
-  enableProductSales: boolean;
-  enableProductTitle: boolean;
+  enableProductDesc?: boolean;
+  enableProductPrice?: boolean;
+  enableProductSales?: boolean;
+  enableProductTitle?: boolean;
   borderRadius?: number;
   imgList?: IImgListItem[];
   template?: "twoInARow" | "horizontalScrolling";
