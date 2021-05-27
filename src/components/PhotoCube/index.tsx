@@ -37,6 +37,7 @@ const PhotoCube: React.FC<IPhotoCubeProps> = (props) => {
       }}
     >
       <GridBox
+        borderRadius={props.borderRadius}
         template={props.template}
         imgList={props.imgList}
         imagePadding={props.imagePadding || 0}

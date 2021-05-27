@@ -9,6 +9,7 @@ interface IGridBoxProps {
   imagePadding?: number;
   imgList?: IImgListItem[];
   template?: TTemplate;
+  borderRadius?: number;
 }
 
 const NUM_MAP: { [key in TTemplate]: number } = {
@@ -56,6 +57,8 @@ const GridBox: React.FC<IGridBoxProps> = (props) => {
             style={{
               width: "100%",
               height: "auto",
+              overflow: "hidden",
+              borderRadius: `${props.borderRadius}px`,
             }}
             key={item.id}
             className={"item" + idx}
@@ -70,6 +73,7 @@ const GridBox: React.FC<IGridBoxProps> = (props) => {
 GridBox.defaultProps = {
   template: "twoInARow",
   imagePadding: 0,
+  borderRadius: 3,
 };
 
 export default GridBox;
