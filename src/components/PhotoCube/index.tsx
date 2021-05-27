@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image } from "@tarojs/components";
+import { View } from "@tarojs/components";
 import { IImgListItem } from "../type";
 import "../../styles/components/PhotoCube.scss";
 import GridBox from "./GridBox";

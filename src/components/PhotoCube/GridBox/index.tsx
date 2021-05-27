@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Image } from "@tarojs/components";
-import { IImgListItem } from "src/components/type";
+import { IImgListItem } from "../../type";
 import classnames from "classnames";
 import { IPhotoCubeProps } from "../index";
 
