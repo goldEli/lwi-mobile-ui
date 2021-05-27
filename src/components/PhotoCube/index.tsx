@@ -46,7 +46,7 @@ const PhotoCube: React.FC<IPhotoCubeProps> = (props) => {
   );
 };
 
-const imgList = Array(10)
+const imgList = Array(6)
   .fill(0)
   .map((_, idx) => {
     return {

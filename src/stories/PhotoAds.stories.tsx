@@ -20,6 +20,10 @@ const ret: TMeta<IPhotoAdsProps> = {
   argTypes: {
     template: {
       description: "展示模式，**carousel** : 轮播，**oneInARow** : 纵向排列，",
+      control: {
+        type: "select",
+        options: ["carousel", "oneInARow"]
+      }
     },
     imgList: {
       description: "图片信息",

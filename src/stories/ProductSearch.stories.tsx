@@ -19,6 +19,10 @@ const ret: TMeta<IProductSearchProps> = {
   argTypes: {
     borderStyle: {
       description: `搜索框样式类型: **normal** , **none** `,
+      control: {
+        type: "select",
+        options: ["normal", "none"]
+      }
       // options: ["normal", "none"],
       // contorl: "select", // Automatically inferred when 'options' is defined
     },

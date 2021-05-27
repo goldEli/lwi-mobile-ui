@@ -18,6 +18,13 @@ const ret: TMeta<IProductRecommendationProps> = {
     },
   },
   argTypes: {
+    template: {
+      description: "展示方式",
+      control: {
+        type: "select",
+        options: ["twoInARow", "horizontalScrolling"],
+      },
+    },
     imgList: {
       description: "图片信息",
     },

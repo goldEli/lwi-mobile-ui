@@ -18,9 +18,19 @@ const ret: TMeta<IPhotoCubeProps> = {
   },
   argTypes: {
     template: {
-      description: `
-      展示模式 | "twoInARow" 一行二个 | "threeInARow" 一行三个 | "fourInARow" 一行四个 | "upOneDownThree" 上一下三 | "leftTwoRightTwo" 左二右二 | "leftOneRightTwo" 左一右二 | "leftOneIRightThree" 左一右三
-      `,
+      description: `展示模式`,
+      control: {
+        type: "select",
+        options: [
+          "twoInARow",
+          "threeInARow",
+          "fourInARow",
+          "upOneDownThree",
+          "leftTwoRightTwo",
+          "leftOneRightTwo",
+          "leftOneIRightThree",
+        ],
+      },
     },
     imgList: {
       description: "图片信息",

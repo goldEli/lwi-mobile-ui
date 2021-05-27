@@ -20,6 +20,27 @@ export default {
   },
   argTypes: {
     color: { control: "color" },
+    align: {
+      description: "显示位置",
+      control: {
+        type: "select",
+        options: ["left", "center", "end"],
+      },
+    },
+    fontSize: {
+      description: "字体大小",
+      control: {
+        type: "select",
+        options: ["16", "14", "12"],
+      },
+    },
+    fontWeight: {
+      description: "字体粗细",
+      control: {
+        type: "select",
+        options: ["bold", "normal"],
+      },
+    },
   },
 } as Meta;
 
