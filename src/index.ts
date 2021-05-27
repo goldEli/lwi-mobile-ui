@@ -7,3 +7,4 @@ export { default as CategoryNavigation } from "./components/CategoryNavigation";
 export { default as GoldCoinPurchase } from "./components/GoldCoinPurchase";
 export { default as ProductSearch } from "./components/ProductSearch";
 export { default as PhotoCube } from "./components/PhotoCube";
+export { default as ProductRecommendation } from "./components/ProductRecommendation";

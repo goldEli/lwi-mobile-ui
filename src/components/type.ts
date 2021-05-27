@@ -15,4 +15,5 @@ export interface IImgListItem {
   openType?: string;
   wxapplink?: string;
   imgUrl: IImgUrlItem[];
+  data?: any;
 }
