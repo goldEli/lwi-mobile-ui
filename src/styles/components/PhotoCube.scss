@@ -1,0 +1,74 @@
+@mixin common {
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+}
+
+.lwj-photo-cube {
+  width: 100%;
+  box-sizing: border-box;
+
+  .two_in_a_row {
+    @include common;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "item0 item1";
+  }
+  .three_in_a_row {
+    @include common;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "item0 item1 item2";
+  }
+  .four_in_a_row {
+    @include common;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "item0 item1 item2 item3";
+  }
+
+  .up_one_down_three {
+    @include common;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "item0 item0 item0"
+      "item1 item2 item3";
+  }
+  .left_two_right_two {
+    @include common;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "item0 item1"
+      "item2 item3";
+  }
+  .left_one_right_two {
+    @include common;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "item0 item1"
+      "item0 item2";
+  }
+  .left_one_right_three {
+    @include common;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "item0 item1 item1"
+      "item0 item2 item3";
+  }
+  .item0 {
+    grid-area: item0;
+  }
+  .item1 {
+    grid-area: item1;
+  }
+  .item2 {
+    grid-area: item2;
+  }
+  .item3 {
+    grid-area: item3;
+  }
+}
