@@ -1,6 +1,5 @@
 import React from "react";
 import { View, Image } from "@tarojs/components";
-import img from "../../assets/hihouse/GoldCoinPurchase.png";
 
 export interface IGoldCoinPurchaseProps {}
 
@@ -16,7 +15,7 @@ const GoldCoinPurchase: React.FC<IGoldCoinPurchaseProps> = (props) => {
           width: "100%",
           height: "auto",
         }}
-        src={img}
+        src="https://static.liweijia.com/site-php/images/GoldCoinPurchase.png"
       />
     </View>
   );

@@ -1,6 +1,5 @@
 import React from "react";
 import { View, Image } from "@tarojs/components";
-import img from "../../assets/hihouse/StoreInfo.png";
 
 export interface IStoreInfoProps {}
 
@@ -16,7 +15,7 @@ const StoreInfo: React.FC<IStoreInfoProps> = (props) => {
           width: "100%",
           height: "auto",
         }}
-        src={img}
+        src="https://static.liweijia.com/site-php/images/StoreInfo.png"
       />
     </View>
   );
