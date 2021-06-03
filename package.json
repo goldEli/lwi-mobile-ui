@@ -19,7 +19,7 @@
     "build": "yarn run build:rollup && yarn run build:lib",
     "build:lib": "tsc --project ./tsconfig.build.json --declaration --declarationDir types",
     "build:rollup": "rollup --config ./rollup.config.js",
-    "build:rollup-h5": "rollup --config ./rollup-h5.config.js",
+    "build:rollup-h5": "rollup --config ./rollup-h5.config.js && cp ./h5/index.esm.css .storybook/index.esm.css",
     "prepublishOnly": "yarn run clean && yarn run build",
     "lint": "eslint ./src --fix",
     "lint:style": "stylelint \"src/**/*.scss\" --syntax scss",
@@ -28,7 +28,7 @@
     "test:ci": "yarn run build:h5 && yarn run test",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "clean": "rimraf .temp dist lib coverage",
-    "storybook": "yarn build:rollup-h5 && start-storybook -p 6006 -s public",
+    "storybook": "yarn build:rollup-h5 &&  start-storybook -p 6006 -s public",
     "build-storybook": "yarn build:rollup-h5 && build-storybook"
   },
   "keywords": [
