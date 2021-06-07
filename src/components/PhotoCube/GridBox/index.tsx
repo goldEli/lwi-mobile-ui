@@ -51,7 +51,7 @@ const GridBox: React.FC<IGridBoxProps> = (props) => {
       }}
       className={classes}
     >
-      {props?.imgList?.slice(0, num).map((item, idx) => {
+      {props?.imgList?.slice(0, num)?.map((item, idx) => {
         return (
           <Image
             style={{
@@ -62,7 +62,7 @@ const GridBox: React.FC<IGridBoxProps> = (props) => {
             }}
             key={item.id}
             className={"item" + idx}
-            src={item.imgUrl[0].url}
+            src={item?.imgUrl[0]?.url}
           />
         );
       })}
