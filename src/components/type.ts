@@ -17,3 +17,12 @@ export interface IImgListItem {
   imgUrl: IImgUrlItem[];
   data?: any;
 }
+
+export interface IProductListItem {
+  id: string;
+  name: string;
+  cover_path: string;
+  price: number;
+  sales_volume: number;
+  description: string;
+}
