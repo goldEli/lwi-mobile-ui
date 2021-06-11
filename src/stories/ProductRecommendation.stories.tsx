@@ -25,7 +25,7 @@ const ret: TMeta<IProductRecommendationProps> = {
         options: ["twoInARow", "horizontalScrolling"],
       },
     },
-    imgList: {
+    productList: {
       description: "图片信息",
     },
   },
