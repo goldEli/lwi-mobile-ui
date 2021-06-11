@@ -15,6 +15,13 @@ const CategoryNavigation: React.FC<ICategoryNavigationProps> = (props) => {
           width: "100%",
           height: "auto",
         }}
+        src="https://static.liweijia.com/site-php/images/ProductSearch1.jpg"
+      />
+      <Image
+        style={{
+          width: "100%",
+          height: "auto",
+        }}
         src="https://static.liweijia.com/site-php/images/CategoryNavigation.png"
       />
     </View>
