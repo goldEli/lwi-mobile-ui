@@ -3,6 +3,7 @@ import { View, Image, Text } from "@tarojs/components";
 import { IProductListItem } from "../type";
 import "../../styles/components/ProductRecommendation.scss";
 import classnames from "classnames";
+import Taro from "@tarojs/taro";
 
 export interface IProductRecommendationProps {
   enableProductDesc?: boolean;
@@ -36,6 +37,12 @@ const ProductRecommendation: React.FC<IProductRecommendationProps> = (
                     width: "100%",
                     height: "auto",
                   }}
+                  onClick={() => {
+                    img?.wxapplink &&
+                      Taro.navigateTo({
+                        url: img?.wxapplink,
+                      });
+                  }}
                   src={img.cover_path}
                 />
               </View>
@@ -61,29 +68,6 @@ const ProductRecommendation: React.FC<IProductRecommendationProps> = (
   );
 };
 
-// const imgList = Array(6)
-//   .fill(0)
-//   .map((item, idx) => {
-//     return {
-//       id: idx + "",
-//       title: "首页" + idx,
-//       desc: "首页banner" + idx,
-//       link: "http://www.liweijia.com",
-//       data: {
-//         price: 1 + idx,
-//         sales_volume: 100 + idx,
-//       },
-//       imgUrl: [
-//         {
-//           uid: "001" + idx,
-//           name: "image.png" + idx,
-//           status: "done",
-//           url:
-//             "https://www.businessinsider.in/thumb/msid-80010616,width-640,resizemode-4,imgsize-409906/Happy-New-Year-2021-Images-for-Whatsapp-and-Facebook-profile-picture.jpg",
-//         },
-//       ],
-//     };
-//   });
 const productList = [
   {
     id: "10408784",
@@ -93,6 +77,7 @@ const productList = [
     price: 100,
     sales_volume: 3,
     description: "",
+    wxapplink: "",
   },
   {
     id: "10357209",
@@ -102,6 +87,7 @@ const productList = [
     price: 200,
     sales_volume: 4,
     description: "",
+    wxapplink: "",
   },
 ];
 

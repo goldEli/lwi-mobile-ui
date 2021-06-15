@@ -25,4 +25,5 @@ export interface IProductListItem {
   price: number;
   sales_volume: number;
   description: string;
+  wxapplink?: string;
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { View, Image, Text } from "@tarojs/components";
 import { IImgListItem } from "../type";
 import "../../styles/components/GraphicNavigation.scss";
+import Taro from "@tarojs/taro";
 
 export interface IGraphicNavigationProps {
   enableCustomizedGoods?: boolean;
@@ -40,6 +41,12 @@ const GraphicNavigation: React.FC<IGraphicNavigationProps> = (props) => {
                     width: "100%",
                     height: "auto",
                   }}
+                  onClick={() => {
+                    img?.wxapplink &&
+                      Taro.navigateTo({
+                        url: img?.wxapplink,
+                      });
+                  }}
                   src={img?.imgUrl[0]?.url}
                 />
               </View>
@@ -62,6 +69,7 @@ const imgList = Array(40)
       title: "首页" + idx,
       desc: "首页banner" + idx,
       link: "http://www.liweijia.com",
+      wxapplink: "http://www.liweijia.com",
       imgUrl: [
         {
           uid: "001" + idx,

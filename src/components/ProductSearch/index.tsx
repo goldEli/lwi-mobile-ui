@@ -6,8 +6,6 @@ export interface IProductSearchProps {
 }
 
 const ProductSearch: React.FC<IProductSearchProps> = (props) => {
-  console.log(props);
-
   return (
     <View
       style={{

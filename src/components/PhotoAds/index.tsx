@@ -1,7 +1,7 @@
 import React from "react";
 import { Swiper, SwiperItem, View, Image } from "@tarojs/components";
 import { IImgListItem } from "../type";
-
+import Taro from "@tarojs/taro";
 
 export interface IPhotoAdsProps {
   template?: "carousel" | "oneInARow";
@@ -18,7 +18,7 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
       style={{
         width: "100%",
         padding: `0 ${props.paddingX}px`,
-        boxSizing: "border-box"
+        boxSizing: "border-box",
       }}
     >
       {props.template === "carousel" ? (
@@ -37,6 +37,12 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
                     borderRadius: `${props.borderRadius}px`,
                     width: "100%",
                     height: "auto",
+                  }}
+                  onClick={() => {
+                    item?.wxapplink &&
+                      Taro.navigateTo({
+                        url: item?.wxapplink,
+                      });
                   }}
                   // mode="aspectFit"
                   src={item?.imgUrl[0]?.url}

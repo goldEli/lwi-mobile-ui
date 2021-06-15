@@ -3,6 +3,8 @@ import { View, Image } from "@tarojs/components";
 import { IImgListItem } from "../../type";
 import classnames from "classnames";
 import { IPhotoCubeProps } from "../index";
+import Taro from "@tarojs/taro";
+
 
 type TTemplate = Required<IPhotoCubeProps>["template"];
 interface IGridBoxProps {
@@ -59,6 +61,11 @@ const GridBox: React.FC<IGridBoxProps> = (props) => {
               height: "auto",
               overflow: "hidden",
               borderRadius: `${props.borderRadius}px`,
+            }}
+            onClick={() => {
+              item?.wxapplink && Taro.navigateTo({
+                url: item?.wxapplink 
+              });
             }}
             key={item.id}
             className={"item" + idx}
