@@ -1,9 +1,12 @@
 .lwj-photo-ads {
   .swiper-img {
     width: 100%;
-    height: 150px;
+    height: 300px;
   }
   .normal-img {
     width: 100%;
+  }
+  taro-swiper-core{
+    height: 300px;
   }
 }
