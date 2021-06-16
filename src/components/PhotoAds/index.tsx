@@ -36,7 +36,7 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
                   style={{
                     borderRadius: `${props.borderRadius}px`,
                     width: "100%",
-                    height: "auto",
+                    height: "150px",
                   }}
                   onClick={() => {
                     item?.wxapplink &&
@@ -44,7 +44,7 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
                         url: item?.wxapplink,
                       });
                   }}
-                  // mode="aspectFit"
+                  mode="aspectFit"
                   src={item?.imgUrl[0]?.url}
                 />
               </SwiperItem>
@@ -58,9 +58,8 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
               <Image
                 style={{
                   borderRadius: `${props.borderRadius}px`,
-                  width: "100%",
-                  height: "auto",
                 }}
+                mode="heightFix"
                 key={item.id}
                 src={item?.imgUrl[0]?.url}
               />
