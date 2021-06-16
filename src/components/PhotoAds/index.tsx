@@ -56,10 +56,11 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
           {props?.imgList?.map((item) => {
             return (
               <Image
+                className="normal-img"
                 style={{
                   borderRadius: `${props.borderRadius}px`,
                 }}
-                mode="heightFix"
+                mode="widthFix"
                 key={item.id}
                 src={item?.imgUrl[0]?.url}
               />

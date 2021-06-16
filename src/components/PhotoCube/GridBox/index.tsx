@@ -60,7 +60,7 @@ const GridBox: React.FC<IGridBoxProps> = (props) => {
               overflow: "hidden",
               borderRadius: `${props.borderRadius}px`,
             }}
-            mode="aspectFit"
+            mode="widthFix"
             onClick={() => {
               item?.wxapplink && Taro.navigateTo({
                 url: item?.wxapplink 
