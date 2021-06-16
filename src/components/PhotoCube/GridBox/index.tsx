@@ -57,18 +57,17 @@ const GridBox: React.FC<IGridBoxProps> = (props) => {
         return (
           <Image
             style={{
-              width: "100%",
-              height: "auto",
               overflow: "hidden",
               borderRadius: `${props.borderRadius}px`,
             }}
+            mode="aspectFit"
             onClick={() => {
               item?.wxapplink && Taro.navigateTo({
                 url: item?.wxapplink 
               });
             }}
             key={item.id}
-            className={"item" + idx}
+            className={"item-img item" + idx}
             src={item?.imgUrl[0]?.url}
           />
         );
