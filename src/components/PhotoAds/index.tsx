@@ -2,6 +2,7 @@ import React from "react";
 import { Swiper, SwiperItem, View, Image } from "@tarojs/components";
 import { IImgListItem } from "../type";
 import Taro from "@tarojs/taro";
+import "../../styles/components/PhotoAds.scss";
 
 export interface IPhotoAdsProps {
   template?: "carousel" | "oneInARow";
@@ -33,10 +34,9 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
             return (
               <SwiperItem key={item.id}>
                 <Image
+                  className="swiper-img"
                   style={{
                     borderRadius: `${props.borderRadius}px`,
-                    width: "100%",
-                    height: "150px",
                   }}
                   onClick={() => {
                     item?.wxapplink &&
@@ -44,7 +44,7 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
                         url: item?.wxapplink,
                       });
                   }}
-                  mode="aspectFit"
+                  mode="widthFix"
                   src={item?.imgUrl[0]?.url}
                 />
               </SwiperItem>

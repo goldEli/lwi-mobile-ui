@@ -35,10 +35,10 @@ const GraphicNavigation: React.FC<IGraphicNavigationProps> = (props) => {
         {props?.imgList?.map((img) => {
           return (
             <View className="list-item">
-              <View className="list-item-box">
+              <View className="list-item-img-box">
                 <Image
                   className="list-item-img"
-                  mode="heightFix"
+                  mode="widthFix"
                   onClick={() => {
                     img?.wxapplink &&
                       Taro.navigateTo({
