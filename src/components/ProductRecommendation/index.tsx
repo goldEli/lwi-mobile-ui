@@ -29,14 +29,12 @@ const ProductRecommendation: React.FC<IProductRecommendationProps> = (
           return (
             <View className="list-item">
               <View
-                className="list-item-img"
+                className="list-item-img-box"
                 style={{ borderRadius: `${props.borderRadius}px` }}
               >
                 <Image
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                  }}
+                  className="list-item-img"
+                  mode="heightFix"
                   onClick={() => {
                     img?.wxapplink &&
                       Taro.navigateTo({

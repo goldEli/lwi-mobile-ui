@@ -18,32 +18,40 @@
       overflow: hidden;
       flex-shrink: 0;
       padding: 8px;
-      .list-item-img {
+      .list-item-img-box {
         overflow: hidden;
       }
+      .list-item-img {
+        height: 335px;
+      }
+
       .list-item-info {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
         .title {
-          font-size: 13px;
-          line-height: 30px;
+          font-size: 26px;
+          line-height: 1;
+          margin-top: 10px;
         }
         .desc {
-          font-size: 12px;
+          font-size: 24px;
           color: rgba(136, 136, 136, 1);
-          line-height: 20px;
+          line-height: 1;
+          margin-top: 10px;
         }
         .price {
-          font-size: 14px;
+          font-size: 28px;
           color: rgba(232, 97, 64, 1);
-          line-height: 20px;
+          line-height: 1;
+          margin-top: 10px;
         }
         .sales_volume {
-          font-size: 12px;
+          font-size: 18px;
           color: rgba(205, 205, 205, 1);
-          line-height: 20px;
+          line-height: 1;
+          margin-top: 10px;
         }
       }
     }
