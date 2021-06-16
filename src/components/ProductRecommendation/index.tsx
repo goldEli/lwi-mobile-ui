@@ -34,7 +34,7 @@ const ProductRecommendation: React.FC<IProductRecommendationProps> = (
               >
                 <Image
                   className="list-item-img"
-                  mode="heightFix"
+                  mode="aspectFill"
                   onClick={() => {
                     img?.wxapplink &&
                       Taro.navigateTo({
