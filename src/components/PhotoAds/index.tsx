@@ -106,7 +106,7 @@ PhotoAds.defaultProps = {
   ],
   borderRadius: 3,
   paddingX: 30,
-  autoplay: false,
+  autoplay: true,
 };
 
 export default PhotoAds;
