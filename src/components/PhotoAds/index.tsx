@@ -63,6 +63,12 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
                 mode="widthFix"
                 key={item.id}
                 src={item?.imgUrl[0]?.url}
+                onClick={() => {
+                  item?.wxapplink &&
+                    Taro.navigateTo({
+                      url: item?.wxapplink,
+                    });
+                }}
               />
             );
           })}
