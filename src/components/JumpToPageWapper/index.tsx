@@ -7,15 +7,20 @@ interface IJumpToPageWapperProps {
   clickHref?: IImgListItem["clickHref"];
   wxapplink?: string;
   onOk?: () => void;
+  style?: { [key in string]: string | number };
 }
 
 const JumpToPageWapper: React.FC<IJumpToPageWapperProps> = (props) => {
   const jumpToContact = props.clickHref?.includes("kefu");
   const jumpToPage = props.clickHref?.includes("wxapp");
+  const style = props.style || {};
   if (jumpToPage) {
     return (
       <View
-        style={{ width: "100%", height: "100%" }}
+        style={{
+          width: "100%",
+          ...style,
+        }}
         onClick={() => {
           props?.wxapplink &&
             Taro.navigateTo({
@@ -35,6 +40,7 @@ const JumpToPageWapper: React.FC<IJumpToPageWapperProps> = (props) => {
           height: "100%",
           position: "relative",
           overflow: "hidden",
+          ...style,
         }}
         onClick={() => {
           props?.wxapplink &&
@@ -51,6 +57,7 @@ const JumpToPageWapper: React.FC<IJumpToPageWapperProps> = (props) => {
             width: "100%",
             height: "100%",
             opacity: "0",
+          ...style,
           }}
           openType="contact"
         ></Button>

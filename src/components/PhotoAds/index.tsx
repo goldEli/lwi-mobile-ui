@@ -3,6 +3,7 @@ import { Swiper, SwiperItem, View, Image } from "@tarojs/components";
 import { IImgListItem } from "../type";
 import Taro from "@tarojs/taro";
 import "../../styles/components/PhotoAds.scss";
+import JumpToPageWapper from "../JumpToPageWapper";
 
 export interface IPhotoAdsProps {
   template?: "carousel" | "oneInARow";
@@ -33,20 +34,19 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
           {props?.imgList?.map((item) => {
             return (
               <SwiperItem key={item.id}>
-                <Image
-                  className="swiper-img"
-                  style={{
-                    borderRadius: `${props.borderRadius}px`,
-                  }}
-                  onClick={() => {
-                    item?.wxapplink &&
-                      Taro.navigateTo({
-                        url: item?.wxapplink,
-                      });
-                  }}
-                  mode="widthFix"
-                  src={item?.imgUrl[0]?.url}
-                />
+                <JumpToPageWapper
+                  wxapplink={item.wxapplink}
+                  clickHref={item.clickHref}
+                >
+                  <Image
+                    className="swiper-img"
+                    style={{
+                      borderRadius: `${props.borderRadius}px`,
+                    }}
+                    mode="widthFix"
+                    src={item?.imgUrl[0]?.url}
+                  />
+                </JumpToPageWapper>
               </SwiperItem>
             );
           })}
@@ -55,21 +55,26 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
         <View style={{ display: "flex", flexDirection: "column" }}>
           {props?.imgList?.map((item) => {
             return (
-              <Image
-                className="normal-img"
-                style={{
-                  borderRadius: `${props.borderRadius}px`,
-                }}
-                mode="widthFix"
-                key={item.id}
-                src={item?.imgUrl[0]?.url}
-                onClick={() => {
-                  item?.wxapplink &&
-                    Taro.navigateTo({
-                      url: item?.wxapplink,
-                    });
-                }}
-              />
+              <JumpToPageWapper
+                wxapplink={item.wxapplink}
+                clickHref={item.clickHref}
+              >
+                <Image
+                  className="normal-img"
+                  style={{
+                    borderRadius: `${props.borderRadius}px`,
+                  }}
+                  mode="widthFix"
+                  key={item.id}
+                  src={item?.imgUrl[0]?.url}
+                  onClick={() => {
+                    item?.wxapplink &&
+                      Taro.navigateTo({
+                        url: item?.wxapplink,
+                      });
+                  }}
+                />
+              </JumpToPageWapper>
             );
           })}
         </View>
