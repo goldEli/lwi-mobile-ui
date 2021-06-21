@@ -2,9 +2,9 @@ import React from "react";
 import { View, Image, Text } from "@tarojs/components";
 import { IImgListItem } from "../type";
 import "../../styles/components/GraphicNavigation.scss";
-import Taro from "@tarojs/taro";
 import JumpToPageWapper from "../JumpToPageWapper";
 
+type TFn = () => void;
 export interface IGraphicNavigationProps {
   enableCustomizedGoods?: boolean;
   enableMyOrder?: boolean;
@@ -14,11 +14,69 @@ export interface IGraphicNavigationProps {
   enableAIDesigner?: boolean;
   paddingX?: number;
   imgList?: IImgListItem[];
+  isShowSystemNav: boolean;
+  action?: {
+    goToAI?: TFn;
+    goToCustomizedGoods?: TFn;
+    goToMyOrder?: TFn;
+    goToShareMoney?: TFn;
+    goToMemberInvitation?: TFn;
+    goToStareBusinessCard?: TFn;
+  };
 }
 
 const GraphicNavigation: React.FC<IGraphicNavigationProps> = (props) => {
   const len = props?.imgList?.length || 0;
-  const spaceBetween = len <= 4;
+  const systemNavs: {
+    src: string;
+    text: string;
+    show?: boolean;
+    clickFn?: () => void;
+  }[] = [
+    {
+      src:
+        "https://static.liweijia.com/sales/wx_app/assets/images/6799FF/index/index_ai_icon.png",
+      text: "AI设计师",
+      show: props.enableAIDesigner,
+      clickFn: props?.action?.goToAI,
+    },
+    {
+      src:
+        "https://static.liweijia.com/sales/wx_app/assets/images/6799FF/index/index_qianbao_icon.png",
+      text: "定制商品",
+      show: props.enableCustomizedGoods,
+      clickFn: props?.action?.goToCustomizedGoods,
+    },
+    {
+      src:
+        "https://static.liweijia.com/sales/wx_app/assets/images/6799FF/index/index_order_icon.png",
+      text: "我的订单",
+      show: props.enableMyOrder,
+      clickFn: props?.action?.goToMyOrder,
+    },
+    {
+      src:
+        "https://static.liweijia.com/sales/wx_app/assets/images/6799FF/index/index_fenxiang_icon.png",
+      text: "分享赚钱",
+      show: props.enableShareMoney,
+      clickFn: props?.action?.goToShareMoney,
+    },
+    {
+      src:
+        "https://static.liweijia.com/sales/wx_app/assets/images/6799FF/index/index_kaidian_icon.png",
+      text: "会员邀请",
+      show: props.enableMemberInvitation,
+      clickFn: props?.action?.goToMemberInvitation,
+    },
+    {
+      src:
+        "https://static.liweijia.com/sales/wx_app/assets/images/6799FF/index/index_mingpian_icon.png",
+      text: "店铺名片",
+      show: props.enableStareBusinessCard,
+    },
+  ].filter((item) => props.isShowSystemNav && item.show);
+
+  const spaceBetween = len + systemNavs.length <= 4;
   return (
     <View
       style={{
@@ -33,6 +91,27 @@ const GraphicNavigation: React.FC<IGraphicNavigationProps> = (props) => {
           overflow: spaceBetween ? "hidden" : "scroll",
         }}
       >
+        {systemNavs.map((item) => {
+          return (
+            <View
+              className="list-item"
+              onClick={() => {
+                item.clickFn?.();
+              }}
+            >
+              <View className="list-item-img-box">
+                <Image
+                  className="list-item-img"
+                  mode="widthFix"
+                  src={item.src}
+                />
+              </View>
+              <View className="list-item-title">
+                <Text>{item.text}</Text>
+              </View>
+            </View>
+          );
+        })}
         {props?.imgList?.map((img) => {
           return (
             <View className="list-item">
@@ -90,6 +169,7 @@ GraphicNavigation.defaultProps = {
   enableMyOrder: false,
   enableShareMoney: false,
   enableStareBusinessCard: false,
+  isShowSystemNav: true,
 };
 
 export default GraphicNavigation;

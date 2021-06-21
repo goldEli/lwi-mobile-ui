@@ -4,7 +4,7 @@ import { IImgListItem } from "../../type";
 import classnames from "classnames";
 import { IPhotoCubeProps } from "../index";
 import Taro from "@tarojs/taro";
-import JumpToPageWapper from "src/components/JumpToPageWapper";
+import JumpToPageWapper from "../../JumpToPageWapper";
 
 type TTemplate = Required<IPhotoCubeProps>["template"];
 interface IGridBoxProps {
