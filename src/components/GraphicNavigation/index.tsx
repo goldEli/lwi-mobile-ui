@@ -3,6 +3,7 @@ import { View, Image, Text } from "@tarojs/components";
 import { IImgListItem } from "../type";
 import "../../styles/components/GraphicNavigation.scss";
 import Taro from "@tarojs/taro";
+import JumpToPageWapper from "../JumpToPageWapper";
 
 export interface IGraphicNavigationProps {
   enableCustomizedGoods?: boolean;
@@ -36,17 +37,16 @@ const GraphicNavigation: React.FC<IGraphicNavigationProps> = (props) => {
           return (
             <View className="list-item">
               <View className="list-item-img-box">
-                <Image
-                  className="list-item-img"
-                  mode="widthFix"
-                  onClick={() => {
-                    img?.wxapplink &&
-                      Taro.navigateTo({
-                        url: img?.wxapplink,
-                      });
-                  }}
-                  src={img?.imgUrl[0]?.url}
-                />
+                <JumpToPageWapper
+                  clickHref={img.clickHref}
+                  wxapplink={img.wxapplink}
+                >
+                  <Image
+                    className="list-item-img"
+                    mode="widthFix"
+                    src={img?.imgUrl[0]?.url}
+                  />
+                </JumpToPageWapper>
               </View>
               <View className="list-item-title">
                 <Text>{img.title}</Text>
