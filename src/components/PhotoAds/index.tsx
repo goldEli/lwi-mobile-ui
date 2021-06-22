@@ -2,7 +2,6 @@ import React from "react";
 import { Swiper, SwiperItem, View, Image } from "@tarojs/components";
 import { IImgListItem } from "../type";
 import Taro from "@tarojs/taro";
-import "../../styles/components/PhotoAds.scss";
 import JumpToPageWapper from "../JumpToPageWapper";
 
 export interface IPhotoAdsProps {

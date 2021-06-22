@@ -1,7 +1,6 @@
 import React from "react";
 import { View, Image, Text } from "@tarojs/components";
 import { IProductListItem } from "../type";
-import "../../styles/components/ProductRecommendation.scss";
 import classnames from "classnames";
 import Taro from "@tarojs/taro";
 

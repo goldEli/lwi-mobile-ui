@@ -1,7 +1,6 @@
 import React from "react";
 import { View, Image, Text } from "@tarojs/components";
 import { IImgListItem } from "../type";
-import "../../styles/components/GraphicNavigation.scss";
 import JumpToPageWapper from "../JumpToPageWapper";
 
 type TFn = () => void;
