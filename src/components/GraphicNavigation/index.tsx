@@ -72,6 +72,7 @@ const GraphicNavigation: React.FC<IGraphicNavigationProps> = (props) => {
         "https://static.liweijia.com/sales/wx_app/assets/images/6799FF/index/index_mingpian_icon.png",
       text: "店铺名片",
       show: props.enableStareBusinessCard,
+      clickFn: props?.action?.goToStareBusinessCard,
     },
   ].filter((item) => props.isShowSystemNav && item.show);
 
