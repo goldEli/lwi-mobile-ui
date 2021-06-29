@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { CSSProperties, useState } from "react";
 import { View, Swiper } from "@tarojs/components";
 import { SwiperProps } from "@tarojs/components/types/Swiper";
 export interface ISwiperProps extends SwiperProps {
   disableDot?: boolean;
   pageNum?: number;
   skin: string
+  dotsStyle?: CSSProperties
 }
 const LwjSwiper: React.FC<ISwiperProps> = (props) => {
-  const { disableDot, pageNum = 1, children, skin } = props;
+  const { disableDot, pageNum = 1, children, skin, dotsStyle = {} } = props;
   const [currentPage, setCurrentPage] = useState(0);
   const onChange = (e) => {
     setCurrentPage(e.detail?.current);
@@ -19,7 +20,7 @@ const LwjSwiper: React.FC<ISwiperProps> = (props) => {
       </Swiper>
       {/* 自定义dot */}
       {!disableDot && pageNum > 1 && (
-        <View className={"dots"}>
+        <View className={"dots"} style={dotsStyle}>
           {new Array(pageNum).fill("").map((_, index) => {
             return (
               <View
