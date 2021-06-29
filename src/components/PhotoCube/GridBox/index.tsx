@@ -58,6 +58,7 @@ const GridBox: React.FC<IGridBoxProps> = (props) => {
           <JumpToPageWapper
             wxapplink={item.wxapplink}
             clickHref={item.clickHref}
+            classname={"item" + idx}
           >
             <Image
               style={{
@@ -66,7 +67,7 @@ const GridBox: React.FC<IGridBoxProps> = (props) => {
               }}
               mode="widthFix"
               key={item.id}
-              className={"item-img item" + idx}
+              className={"item-img"}
               src={item?.imgUrl[0]?.url}
             />
           </JumpToPageWapper>
