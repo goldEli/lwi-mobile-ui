@@ -1,0 +1,44 @@
+.banner {
+  position: relative;
+}
+
+.banner .dots {
+  position: absolute;
+  bottom: -40rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0rpx;
+  height: 8rpx;
+  width: 120px;
+  display: flex;
+  flex-direction: row;
+  background: #e4e1e1;
+  border-radius: 8rpx;
+}
+
+.banner .dot {
+  flex: 1;
+  height: 8rpx;
+  border-radius: 8rpx;
+  display: inline-block;
+}
+
+.banner .round.dots {
+  position: absolute;
+  bottom: 20rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 0;
+  font-size: 0rpx;
+  background-color: none;
+  border-radius: 5rpx;
+}
+
+.banner .round.dot {
+  width: 10rpx;
+  height: 10rpx;
+  margin: 0 6rpx;
+  border-radius: 5rpx;
+  background-color: #fff;
+  display: inline-block;
+}
