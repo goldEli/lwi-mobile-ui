@@ -30,6 +30,7 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
           autoplay={props.autoplay}
           pageNum={props?.imgList?.length}
           skin={props.skin}
+          dotsStyle={{bottom: '10px', background: '#fff'}}
         >
           {props?.imgList?.map((item) => {
             return (
