@@ -8,5 +8,6 @@ export { default as GoldCoinPurchase } from "./components/GoldCoinPurchase";
 export { default as ProductSearch } from "./components/ProductSearch";
 export { default as PhotoCube } from "./components/PhotoCube";
 export { default as ProductRecommendation } from "./components/ProductRecommendation";
+export { default as LwjSwiper } from "./components/Swiper";
 
 import "./styles/index.scss"

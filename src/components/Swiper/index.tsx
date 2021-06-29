@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { View, Swiper } from "@tarojs/components";
 import { SwiperProps } from "@tarojs/components/types/Swiper";
-import "./index.scss";
-interface ISwiperProps extends SwiperProps {
+export interface ISwiperProps extends SwiperProps {
   disableDot?: boolean;
   pageNum?: number;
   skin: string
@@ -33,6 +32,10 @@ const LwjSwiper: React.FC<ISwiperProps> = (props) => {
       )}
     </View>
   );
+};
+LwjSwiper.defaultProps = {
+  pageNum: 2,
+  skin: 'STYLE-6799FF'
 };
 
 export default LwjSwiper;
