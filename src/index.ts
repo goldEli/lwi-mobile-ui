@@ -10,5 +10,6 @@ export { default as PhotoCube } from "./components/PhotoCube";
 export { default as ProductRecommendation } from "./components/ProductRecommendation";
 export { default as LwjSwiper } from "./components/Swiper";
 export { default as ProductFlashSale } from "./components/ProductFlashSale";
+export { default as ComboFlashSale } from "./components/ComboFlashSale";
 
 import "./styles/index.scss";
