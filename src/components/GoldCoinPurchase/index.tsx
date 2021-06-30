@@ -15,7 +15,7 @@ const GoldCoinPurchase: React.FC<IGoldCoinPurchaseProps> = (props) => {
           width: "100%",
           height: "auto",
         }}
-        src="https://static.liweijia.com/site-php/images/GoldCoinPurchase.png"
+        src="https://static.liweijia.com/site-php/upload/commodity-goods/79bdbf0597b8052ec2d3cce863ac13e8.png"
       />
     </View>
   );
