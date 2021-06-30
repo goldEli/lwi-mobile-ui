@@ -6,7 +6,7 @@ import { ProductFlashSale } from "../../h5/index.esm.js";
 import { TMeta } from "./type";
 
 const ret: TMeta<IProductFlashSaleProps> = {
-  title: "组件库/单品闪购",
+  title: "组件库/单品秒杀",
   component: ProductFlashSale,
   parameters: {
     docs: {
