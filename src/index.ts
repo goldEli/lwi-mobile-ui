@@ -9,5 +9,6 @@ export { default as ProductSearch } from "./components/ProductSearch";
 export { default as PhotoCube } from "./components/PhotoCube";
 export { default as ProductRecommendation } from "./components/ProductRecommendation";
 export { default as LwjSwiper } from "./components/Swiper";
+export { default as ProductFlashSale } from "./components/ProductFlashSale";
 
-import "./styles/index.scss"
+import "./styles/index.scss";
