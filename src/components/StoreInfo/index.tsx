@@ -15,7 +15,7 @@ const StoreInfo: React.FC<IStoreInfoProps> = (props) => {
           width: "100%",
           height: "auto",
         }}
-        src="https://static.liweijia.com/site-php/images/StoreInfo.png"
+        src="https://static.liweijia.com/site-php/upload/commodity-goods/4ab145255a447500079b85e1f84f2b1f.png"
       />
     </View>
   );
