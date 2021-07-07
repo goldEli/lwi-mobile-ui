@@ -3,7 +3,6 @@ import { Swiper, SwiperItem, View, Image } from "@tarojs/components";
 import { IImgListItem } from "../type";
 import Taro from "@tarojs/taro";
 import JumpToPageWapper from "../JumpToPageWapper";
-import LwjSwiper from "../Swiper";
 
 export interface IPhotoAdsProps {
   template?: "carousel" | "oneInARow";
@@ -25,12 +24,9 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
       }}
     >
       {props.template === "carousel" ? (
-        <LwjSwiper
+        <Swiper
           circular
           autoplay={props.autoplay}
-          pageNum={props?.imgList?.length}
-          skin={props.skin}
-          dotsStyle={{bottom: '10px', background: '#fff'}}
         >
           {props?.imgList?.map((item) => {
             return (
@@ -51,7 +47,7 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
               </SwiperItem>
             );
           })}
-        </LwjSwiper>
+        </Swiper>
       ) : (
         <View style={{ display: "flex", flexDirection: "column" }}>
           {props?.imgList?.map((item) => {
