@@ -14,7 +14,8 @@
   ],
   "scripts": {
     "dev": "rollup --config ./rollup.config.js -w",
-    "dev:lib": "tsc --project ./tsconfig.build.json --watch --incremental",
+    "dev:lib": "tsc --project ./tsconfig.build.json --declaration --declarationDir types --watch",
+    "dev:rollup": "rollup --config ./rollup.config.js -w",
     "dev:rollup-h5": "rollup --config ./rollup-h5.config.js -w",
     "build": "yarn run build:rollup && yarn run build:lib",
     "build:lib": "tsc --project ./tsconfig.build.json --declaration --declarationDir types",
