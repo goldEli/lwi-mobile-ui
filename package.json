@@ -17,7 +17,7 @@
     "dev:lib": "tsc --project ./tsconfig.build.json --declaration --declarationDir types --watch",
     "dev:rollup": "rollup --config ./rollup.config.js -w",
     "dev:rollup-h5": "rollup --config ./rollup-h5.config.js -w",
-    "build": "yarn run build:rollup && yarn run build:lib",
+    "build": "yarn run build:rollup-h5 & yarn run build:rollup && yarn run build:lib",
     "build:lib": "tsc --project ./tsconfig.build.json --declaration --declarationDir types",
     "build:rollup": "rollup --config ./rollup.config.js",
     "build:rollup-h5": "rollup --config ./rollup-h5.config.js",
