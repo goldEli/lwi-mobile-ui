@@ -41,7 +41,7 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
                     style={{
                       borderRadius: `${props.borderRadius}px`,
                     }}
-                    mode="aspectFill"
+                    mode="widthFix"
                     src={item?.imgUrl[0]?.url}
                   />
                 </JumpToPageWapper>
@@ -62,7 +62,7 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
                   style={{
                     borderRadius: `${props.borderRadius}px`,
                   }}
-                  mode="aspectFill"
+                  mode="widthFix"
                   key={item.id}
                   src={item?.imgUrl[0]?.url}
                   onClick={() => {
