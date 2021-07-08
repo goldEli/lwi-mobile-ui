@@ -11,12 +11,13 @@ export interface IPhotoAdsProps {
   imgList?: IImgListItem[];
   autoplay?: boolean;
   skin: string;
+  isPlus: boolean;
 }
 
 const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
   return (
     <View
-      className="lwj-photo-ads"
+      className={`${props.isPlus ? 'plus-lwj-photo-ads' : 'lwj-photo-ads'}`}
       style={{
         width: "100%",
         padding: `0 ${props.paddingX}px`,
@@ -40,7 +41,7 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
                     style={{
                       borderRadius: `${props.borderRadius}px`,
                     }}
-                    mode="widthFix"
+                    mode="aspectFill"
                     src={item?.imgUrl[0]?.url}
                   />
                 </JumpToPageWapper>
@@ -61,7 +62,7 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
                   style={{
                     borderRadius: `${props.borderRadius}px`,
                   }}
-                  mode="widthFix"
+                  mode="aspectFill"
                   key={item.id}
                   src={item?.imgUrl[0]?.url}
                   onClick={() => {
