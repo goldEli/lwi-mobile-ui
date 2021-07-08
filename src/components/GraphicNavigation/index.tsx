@@ -128,7 +128,7 @@ const GraphicNavigation: React.FC<IGraphicNavigationProps> = (props) => {
                 </JumpToPageWapper>
               </View>
               <View className="list-item-title">
-                <Text>{img.title}</Text>
+                {img.title}
               </View>
             </View>
           );
@@ -143,7 +143,7 @@ const imgList = Array(40)
   .map((item, idx) => {
     return {
       id: idx + "",
-      title: "首页" + idx,
+      title: "首页发生了对方就开了阿斯顿福建安老师开发收到了放假啊老师" + idx,
       desc: "首页banner" + idx,
       link: "http://www.liweijia.com",
       wxapplink: "http://www.liweijia.com",
