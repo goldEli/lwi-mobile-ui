@@ -3,7 +3,6 @@ import { Swiper, SwiperItem, View, Image } from "@tarojs/components";
 import { IImgListItem } from "../type";
 import Taro from "@tarojs/taro";
 import JumpToPageWapper from "../JumpToPageWapper";
-import LwjSwiper from "../Swiper";
 
 export interface IPhotoAdsProps {
   template?: "carousel" | "oneInARow";
@@ -12,12 +11,13 @@ export interface IPhotoAdsProps {
   imgList?: IImgListItem[];
   autoplay?: boolean;
   skin: string;
+  isPlus: boolean;
 }
 
 const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
   return (
     <View
-      className="lwj-photo-ads"
+      className='lwj-photo-ads'
       style={{
         width: "100%",
         padding: `0 ${props.paddingX}px`,
@@ -25,33 +25,32 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
       }}
     >
       {props.template === "carousel" ? (
-        <LwjSwiper
-          circular
-          autoplay={props.autoplay}
-          pageNum={props?.imgList?.length}
-          skin={props.skin}
-          dotsStyle={{bottom: '10px', background: '#fff'}}
-        >
-          {props?.imgList?.map((item) => {
-            return (
-              <SwiperItem key={item.id}>
-                <JumpToPageWapper
-                  wxapplink={item.wxapplink}
-                  clickHref={item.clickHref}
-                >
-                  <Image
-                    className="swiper-img"
-                    style={{
-                      borderRadius: `${props.borderRadius}px`,
-                    }}
-                    mode="widthFix"
-                    src={item?.imgUrl[0]?.url}
-                  />
-                </JumpToPageWapper>
-              </SwiperItem>
-            );
-          })}
-        </LwjSwiper>
+        <View className={`${props.isPlus ? 'plus' : ''}`}>
+          <Swiper
+            circular
+            autoplay={props.autoplay}
+          >
+            {props?.imgList?.map((item) => {
+              return (
+                <SwiperItem key={item.id}>
+                  <JumpToPageWapper
+                    wxapplink={item.wxapplink}
+                    clickHref={item.clickHref}
+                  >
+                    <Image
+                      className="swiper-img"
+                      style={{
+                        borderRadius: `${props.borderRadius}px`,
+                      }}
+                      mode="widthFix"
+                      src={item?.imgUrl[0]?.url}
+                    />
+                  </JumpToPageWapper>
+                </SwiperItem>
+              );
+            })}
+          </Swiper>
+        </View>
       ) : (
         <View style={{ display: "flex", flexDirection: "column" }}>
           {props?.imgList?.map((item) => {

@@ -5,9 +5,26 @@
   }
   .normal-img {
     width: 100%;
-    height: auto;
+    vertical-align: middle;
   }
   taro-swiper-core{
     height: 300px;
+  }
+  .plus {
+    height: 590px;
+    swiper {
+      height: 590px;
+    }
+    .swiper-img {
+      width: 100%;
+      height: 590px;
+    }
+    .normal-img {
+      width: 100%;
+      vertical-align: middle;
+    }
+    taro-swiper-core{
+      height: 590px;
+    }
   }
 }
