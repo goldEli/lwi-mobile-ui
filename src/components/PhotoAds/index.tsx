@@ -17,7 +17,7 @@ export interface IPhotoAdsProps {
 const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
   return (
     <View
-      className={`${props.isPlus ? 'plus-lwj-photo-ads' : 'lwj-photo-ads'}`}
+      className='lwj-photo-ads'
       style={{
         width: "100%",
         padding: `0 ${props.paddingX}px`,
@@ -25,30 +25,32 @@ const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
       }}
     >
       {props.template === "carousel" ? (
-        <Swiper
-          circular
-          autoplay={props.autoplay}
-        >
-          {props?.imgList?.map((item) => {
-            return (
-              <SwiperItem key={item.id}>
-                <JumpToPageWapper
-                  wxapplink={item.wxapplink}
-                  clickHref={item.clickHref}
-                >
-                  <Image
-                    className="swiper-img"
-                    style={{
-                      borderRadius: `${props.borderRadius}px`,
-                    }}
-                    mode="widthFix"
-                    src={item?.imgUrl[0]?.url}
-                  />
-                </JumpToPageWapper>
-              </SwiperItem>
-            );
-          })}
-        </Swiper>
+        <View className={`${props.isPlus ? 'plus' : ''}`}>
+          <Swiper
+            circular
+            autoplay={props.autoplay}
+          >
+            {props?.imgList?.map((item) => {
+              return (
+                <SwiperItem key={item.id}>
+                  <JumpToPageWapper
+                    wxapplink={item.wxapplink}
+                    clickHref={item.clickHref}
+                  >
+                    <Image
+                      className="swiper-img"
+                      style={{
+                        borderRadius: `${props.borderRadius}px`,
+                      }}
+                      mode="widthFix"
+                      src={item?.imgUrl[0]?.url}
+                    />
+                  </JumpToPageWapper>
+                </SwiperItem>
+              );
+            })}
+          </Swiper>
+        </View>
       ) : (
         <View style={{ display: "flex", flexDirection: "column" }}>
           {props?.imgList?.map((item) => {
