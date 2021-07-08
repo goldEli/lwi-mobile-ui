@@ -58,6 +58,16 @@
           color: rgba(232, 97, 64, 1);
           line-height: 1;
           margin-top: 20px;
+          display: flex;
+          flex-direction: row;
+          align-items: baseline;
+        }
+        .price-underline {
+          font-size: 20px;
+          color: rgba(136, 136, 136, 1);
+          line-height: 1;
+          text-decoration: line-through;
+          margin-left: 16px;
         }
         .sales_volume {
           font-size: 18px;

@@ -51,7 +51,12 @@ const ProductRecommendation: React.FC<IProductRecommendationProps> = (
                   <View className="desc">{img.description}</View>
                 )}
                 {props.enableProductPrice && (
-                  <View className="price">{`￥ ${img.price}`}</View>
+                  <View className="price">
+                    {`￥ ${img.price}`}
+                    <View className="price-underline">
+                      {img.priceUnderline && `￥ ${img.priceUnderline}`}
+                    </View>
+                  </View>
                 )}
                 {props.enableProductSales && (
                   <View className="sales_volume">{`已售 ${img.sales_volume}`}</View>

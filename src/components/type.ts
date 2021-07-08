@@ -23,6 +23,7 @@ export interface IProductListItem {
   name: string;
   cover_path: string;
   price: number;
+  priceUnderline?: number;
   sales_volume: number;
   description: string;
   wxapplink?: string;
