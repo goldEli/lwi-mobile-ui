@@ -28,7 +28,7 @@ const JumpToPageWapper: React.FC<IJumpToPageWapperProps> = (props) => {
         onClick={() => {
           props?.wxapplink &&
             Taro.navigateTo({
-              url: props.wxapplink,
+              url: decodeURIComponent(props.wxapplink),
             });
         }}
       >
@@ -50,7 +50,7 @@ const JumpToPageWapper: React.FC<IJumpToPageWapperProps> = (props) => {
         onClick={() => {
           props?.wxapplink &&
             Taro.navigateTo({
-              url: props.wxapplink,
+              url: decodeURIComponent(props.wxapplink),
             });
         }}
       >
