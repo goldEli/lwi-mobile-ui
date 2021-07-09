@@ -102,7 +102,7 @@ const GraphicNavigation: React.FC<IGraphicNavigationProps> = (props) => {
               <View className="list-item-img-box">
                 <Image
                   className="list-item-img"
-                  mode="widthFix"
+                  mode="aspectFit"
                   src={item.src}
                 />
               </View>
