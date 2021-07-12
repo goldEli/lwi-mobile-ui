@@ -28,7 +28,7 @@
     "test": "cross-env NODE_ENV=test && jest --coverage",
     "test:ci": "yarn run build:h5 && yarn run test",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "clean": "rimraf .temp dist lib coverage",
+    "clean": "rimraf h5 dist lib types",
     "storybook": "yarn build:rollup-h5 && start-storybook -p 6006 -s public",
     "build-storybook": "yarn build:rollup-h5 && build-storybook"
   },
