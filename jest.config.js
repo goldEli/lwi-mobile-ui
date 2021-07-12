@@ -1,16 +1,27 @@
-const { jsWithTs: tsjPreset } = require('ts-jest/presets')
+const { jsWithTs: tsjPreset } = require("ts-jest/presets");
 
 module.exports = {
   verbose: true,
-  moduleFileExtensions: ['js', 'jsx', 'json'],
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   rootDir: __dirname,
-  testMatch: ['<rootDir>/test/**/*.test.js', '<rootDir>/test/**/test.js'],
+  testMatch: [
+    "<rootDir>/__tests__/**.test.ts",
+    "<rootDir>/__tests__/**.test.tsx",
+  ],
   transform: {
-    ...tsjPreset.transform
+    '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
+    // '^.+\\.esm.js?$': 'ts-jest',
   },
-  transformIgnorePatterns: ['<rootDir>/node_modules/'],
+  rootDir: __dirname,
+  transformIgnorePatterns: ['<rootDir>/node_modules/(?!@taro)', '^.+\\.(css|sass|scss|less)$'],
   moduleNameMapper: {
-    weui: '<rootDir>/test/__mock__/styleMock.js',
-    '\\.(css|less|sass|scss)$': '<rootDir>/test/__mock__/styleMock.js'
-  }
-}
+    '@tarojs/components': '@tarojs/components/dist-h5/react',
+    '../src/index': '../h5/index.esm.js',
+  },
+  preset: "ts-jest",
+  transform: {
+    // "^.+\\.(ts|tsx)?$": "ts-jest",
+    "^.+\\.(js|jsx)$": "babel-jest",
+  },
+  setupFilesAfterEnv: ["<rootDir>/setupTests.js"]
+};
