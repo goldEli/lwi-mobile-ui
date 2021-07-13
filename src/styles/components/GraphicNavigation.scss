@@ -7,20 +7,31 @@
     display: flex;
     justify-content: space-around;
     .list-item {
-      width: 65px;
-      height: 65px;
       overflow: hidden;
       flex-shrink: 0;
-      .list-item-img {
+      display: flex;
+      flex-direction: column;
+      font-size: 22rpx;
+      color: #333;
+      max-width: 130rpx;
+      .list-item-img-box {
         padding: 0 12px;
-        height: 40px;
+        box-sizing: border-box;
+        overflow: hidden;
+        width: 100%;
+        text-align: center;
+      }
+      .list-item-img {
+        width: 75rpx;
+        height: 75rpx;
       }
       .list-item-title {
-        height: 25px;
-        font-size: 13px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        flex: 1;
+        font-size: 22px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
   }

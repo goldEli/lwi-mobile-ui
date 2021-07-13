@@ -11,9 +11,20 @@ export interface IImgListItem {
   desc: string;
   link: string;
   type?: number;
-  clickHref?: string;
+  clickHref?: ["kefu", "wxapp"];
   openType?: string;
   wxapplink?: string;
   imgUrl: IImgUrlItem[];
   data?: any;
+}
+
+export interface IProductListItem {
+  id: string;
+  name: string;
+  cover_path: string;
+  price: number;
+  priceUnderline?: number;
+  sales_volume: number;
+  description: string;
+  wxapplink?: string;
 }

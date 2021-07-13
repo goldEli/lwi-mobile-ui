@@ -5,4 +5,5 @@ lib/
 /types
 h5/
 .DS_Store
+coverage/
 .storybook/index.esm.css

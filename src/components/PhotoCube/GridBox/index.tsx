@@ -3,6 +3,8 @@ import { View, Image } from "@tarojs/components";
 import { IImgListItem } from "../../type";
 import classnames from "classnames";
 import { IPhotoCubeProps } from "../index";
+import Taro from "@tarojs/taro";
+import JumpToPageWapper from "../../JumpToPageWapper";
 
 type TTemplate = Required<IPhotoCubeProps>["template"];
 interface IGridBoxProps {
@@ -51,19 +53,24 @@ const GridBox: React.FC<IGridBoxProps> = (props) => {
       }}
       className={classes}
     >
-      {props?.imgList?.slice(0, num).map((item, idx) => {
+      {props?.imgList?.slice(0, num)?.map((item, idx) => {
         return (
-          <Image
-            style={{
-              width: "100%",
-              height: "auto",
-              overflow: "hidden",
-              borderRadius: `${props.borderRadius}px`,
-            }}
-            key={item.id}
-            className={"item" + idx}
-            src={item.imgUrl[0].url}
-          />
+          <JumpToPageWapper
+            wxapplink={item.wxapplink}
+            clickHref={item.clickHref}
+            classname={"item" + idx}
+          >
+            <Image
+              style={{
+                overflow: "hidden",
+                borderRadius: `${props.borderRadius}px`,
+              }}
+              mode="widthFix"
+              key={item.id}
+              className={"item-img"}
+              src={item?.imgUrl[0]?.url}
+            />
+          </JumpToPageWapper>
         );
       })}
     </View>

@@ -61,14 +61,22 @@
   }
   .item0 {
     grid-area: item0;
+    overflow: hidden;
   }
   .item1 {
     grid-area: item1;
+
+    overflow: hidden;
   }
   .item2 {
     grid-area: item2;
+    overflow: hidden;
   }
   .item3 {
     grid-area: item3;
+    overflow: hidden;
+  }
+  .item-img{
+    width: 100%;
   }
 }

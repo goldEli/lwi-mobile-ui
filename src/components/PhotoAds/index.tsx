@@ -1,7 +1,8 @@
 import React from "react";
 import { Swiper, SwiperItem, View, Image } from "@tarojs/components";
 import { IImgListItem } from "../type";
-
+import Taro from "@tarojs/taro";
+import JumpToPageWapper from "../JumpToPageWapper";
 
 export interface IPhotoAdsProps {
   template?: "carousel" | "oneInARow";
@@ -9,55 +10,71 @@ export interface IPhotoAdsProps {
   paddingX?: number;
   imgList?: IImgListItem[];
   autoplay?: boolean;
+  skin: string;
+  isPlus: boolean;
 }
 
 const PhotoAds: React.FC<IPhotoAdsProps> = (props) => {
   return (
     <View
-      className="lwj-photo-ads"
+      className='lwj-photo-ads'
       style={{
         width: "100%",
         padding: `0 ${props.paddingX}px`,
-        boxSizing: "border-box"
+        boxSizing: "border-box",
       }}
     >
       {props.template === "carousel" ? (
-        <Swiper
-          indicatorColor="#999"
-          indicatorActiveColor="#333"
-          circular
-          indicatorDots
-          autoplay={props.autoplay}
-        >
-          {props?.imgList?.map((item) => {
-            return (
-              <SwiperItem key={item.id}>
-                <Image
-                  style={{
-                    borderRadius: `${props.borderRadius}px`,
-                    width: "100%",
-                    height: "auto",
-                  }}
-                  // mode="aspectFit"
-                  src={item?.imgUrl[0]?.url}
-                />
-              </SwiperItem>
-            );
-          })}
-        </Swiper>
+        <View className={`${props.isPlus ? 'plus' : ''}`}>
+          <Swiper
+            circular
+            autoplay={props.autoplay}
+          >
+            {props?.imgList?.map((item) => {
+              return (
+                <SwiperItem key={item.id}>
+                  <JumpToPageWapper
+                    wxapplink={item.wxapplink}
+                    clickHref={item.clickHref}
+                  >
+                    <Image
+                      className="swiper-img"
+                      style={{
+                        borderRadius: `${props.borderRadius}px`,
+                      }}
+                      mode="widthFix"
+                      src={item?.imgUrl[0]?.url}
+                    />
+                  </JumpToPageWapper>
+                </SwiperItem>
+              );
+            })}
+          </Swiper>
+        </View>
       ) : (
         <View style={{ display: "flex", flexDirection: "column" }}>
           {props?.imgList?.map((item) => {
             return (
-              <Image
-                style={{
-                  borderRadius: `${props.borderRadius}px`,
-                  width: "100%",
-                  height: "auto",
-                }}
-                key={item.id}
-                src={item?.imgUrl[0]?.url}
-              />
+              <JumpToPageWapper
+                wxapplink={item.wxapplink}
+                clickHref={item.clickHref}
+              >
+                <Image
+                  className="normal-img"
+                  style={{
+                    borderRadius: `${props.borderRadius}px`,
+                  }}
+                  mode="widthFix"
+                  key={item.id}
+                  src={item?.imgUrl[0]?.url}
+                  onClick={() => {
+                    item?.wxapplink &&
+                      Taro.navigateTo({
+                        url: item?.wxapplink,
+                      });
+                  }}
+                />
+              </JumpToPageWapper>
             );
           })}
         </View>
@@ -100,7 +117,7 @@ PhotoAds.defaultProps = {
   ],
   borderRadius: 3,
   paddingX: 30,
-  autoplay: false,
+  autoplay: true,
 };
 
 export default PhotoAds;

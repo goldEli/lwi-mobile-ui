@@ -1,7 +1,6 @@
 import React from "react";
 import { View } from "@tarojs/components";
 import { IImgListItem } from "../type";
-import "../../styles/components/PhotoCube.scss";
 import GridBox from "./GridBox";
 
 export interface IPhotoCubeProps {
